@@ -1,0 +1,2 @@
+apify-client==3.0.1
+mypy==2.1.0
