@@ -60,7 +60,7 @@ def fetch_all_comment_pages(config):
         payload = fetch_comments_page(comments_page_config)
         pages.append(payload)
 
-        if not payload.get("has_more_headload_comments") or not payload.get("next_min_id"):
+        if not payload.get("next_min_id"):
             break
 
         sleep_random()
