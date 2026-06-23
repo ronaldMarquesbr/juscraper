@@ -2,9 +2,9 @@ from urllib.parse import urlencode
 
 import requests
 
-from scrapping.instagram_constants import INSTAGRAM_MEDIA_COMMENTS_PATH
-from scrapping.instagram_support import build_request_cookies, build_request_headers
-from scrapping.utils import bool_to_str, sleep_random
+from scrapping.instagram.instagram_constants import INSTAGRAM_MEDIA_COMMENTS_PATH
+from scrapping.instagram.instagram_support import build_request_cookies, build_request_headers
+from scrapping.scraping_utils import bool_to_str, sleep_random
 
 
 def get_scrap_comments_url(
