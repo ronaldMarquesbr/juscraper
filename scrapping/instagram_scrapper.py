@@ -4,7 +4,7 @@ import requests
 
 from scrapping.instagram_constants import INSTAGRAM_MEDIA_COMMENTS_PATH
 from scrapping.instagram_support import build_request_cookies, build_request_headers
-from scrapping.utils import bool_to_str
+from scrapping.utils import bool_to_str, sleep_random
 
 
 def get_scrap_comments_url(
@@ -63,6 +63,7 @@ def fetch_all_comment_pages(config):
         if not payload.get("has_more_headload_comments") or not payload.get("next_min_id"):
             break
 
+        sleep_random()
         min_id = payload["next_min_id"]
 
     return pages
