@@ -1,18 +1,24 @@
 from apify_actors_constants import INSTAGRAM_HASHTAG_SCRAPER
-from apify_support import get_dataset_items
+from scrapping.apify.apify_service import ApifyService
 
-def get_hashtag_posts(
-    client,
-    hashtags,
-    results_type = "posts",
-    results_limit = 20
-):
-    params = {
-        "hashtags": hashtags,
-        "results_type": results_type,
-        "resultsLimit": results_limit
-    }
 
-    run = client.actor(INSTAGRAM_HASHTAG_SCRAPER).call(run_input=params)
+class ApifyInstagramSearch:
+    def __init__(self, apify_service: ApifyService):
+        self.apify_service = apify_service
 
-    return get_dataset_items(client, run["defaultDatasetId"])
+    def get_hashtag_posts(
+        self, 
+        hashtags,
+        results_type="posts",
+        results_limit=20
+    ):
+        run_input = {
+            "hashtags": hashtags,
+            "results_type": results_type,
+            "resultsLimit": results_limit
+        }
+
+        return self.apify_service.run_actor(
+            actor_identifier=INSTAGRAM_HASHTAG_SCRAPER,
+            run_input=run_input
+        )
