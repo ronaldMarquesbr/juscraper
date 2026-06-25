@@ -1,4 +1,4 @@
-from apify_actors_constants import INSTAGRAM_HASHTAG_SCRAPER
+from scrapping.apify.constants.apify_actors_constants import INSTAGRAM_HASHTAG_SCRAPER
 from scrapping.apify.apify_service import ApifyService
 
 
