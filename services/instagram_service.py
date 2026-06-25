@@ -3,7 +3,7 @@ from scrapping.apify.constants.defaults import DEFAULT_RESULTS_LIMIT
 from scrapping.apify.domain.results_type import ResultsType
 
 from repositories.post_repository import PostRepository
-from services.reel_processor import ReelProcessor
+from services.posts.reel_processor import ReelProcessor
 
 
 class InstagramService:

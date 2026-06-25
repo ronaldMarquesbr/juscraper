@@ -2,7 +2,7 @@ from utils.date_utils import parse_iso_timestamp_to_date
 from models.platform import Platform
 from models.post import PostCreate
 from repositories.post_repository import PostRepository
-from services.validation.lead_validation import is_potential_lead
+from services.posts.lead_validation import is_potential_lead
 
 
 class ReelProcessor:
