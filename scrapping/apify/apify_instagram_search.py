@@ -1,6 +1,7 @@
-from scrapping.apify.constants.apify_actors_constants import INSTAGRAM_HASHTAG_SCRAPER
+from scrapping.apify.constants.actors import INSTAGRAM_HASHTAG_SCRAPER
+from scrapping.apify.constants.defaults import DEFAULT_RESULTS_LIMIT
 from scrapping.apify.apify_service import ApifyService
-from scrapping.apify.constants.results_type import ResultsType
+from scrapping.apify.domain.results_type import ResultsType
 
 
 class ApifyInstagramSearch:
@@ -11,7 +12,7 @@ class ApifyInstagramSearch:
         self, 
         hashtags,
         results_type=ResultsType.POSTS,
-        results_limit=20
+        results_limit=DEFAULT_RESULTS_LIMIT
     ):
         run_input = {
             "hashtags": hashtags,
