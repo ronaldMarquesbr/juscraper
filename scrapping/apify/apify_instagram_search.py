@@ -6,7 +6,7 @@ class ApifyInstagramSearch:
     def __init__(self, apify_service: ApifyService):
         self.apify_service = apify_service
 
-    def get_hashtag_posts(
+    def get_posts_by_hashtags(
         self, 
         hashtags,
         results_type="posts",
