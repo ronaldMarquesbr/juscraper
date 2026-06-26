@@ -10,6 +10,7 @@ class Lawyer(BaseModel):
     created_at: datetime | None = None
     name: str
     email: str
+    phone_number: str
     specialty: str | None = None
     active: bool | None = None
 
@@ -19,5 +20,6 @@ class LawyerCreate(BaseModel):
 
     name: str
     email: str
+    phone_number: str
     specialty: str | None = None
     active: bool | None = None
