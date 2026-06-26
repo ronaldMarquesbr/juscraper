@@ -2,6 +2,8 @@ from datetime import date, datetime
 
 from pydantic import BaseModel, ConfigDict
 
+from models.enums.comment_status import CommentStatus
+
 
 class Comment(BaseModel):
     model_config = ConfigDict(extra="forbid", from_attributes=True)
@@ -13,7 +15,7 @@ class Comment(BaseModel):
     author_username: str
     content: str
     published_at: date | None = None
-    status: str | None = None
+    status: CommentStatus | None = None
     updated_at: datetime | None = None
 
 
@@ -25,4 +27,4 @@ class CommentCreate(BaseModel):
     author_username: str
     content: str
     published_at: date | None = None
-    status: str | None = None
+    status: CommentStatus | None = None

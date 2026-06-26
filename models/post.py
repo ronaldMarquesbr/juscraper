@@ -2,6 +2,8 @@ from datetime import date, datetime
 
 from pydantic import BaseModel, ConfigDict
 
+from models.enums.post_status import PostStatus
+
 
 class Post(BaseModel):
     model_config = ConfigDict(extra="forbid", from_attributes=True)
@@ -12,7 +14,7 @@ class Post(BaseModel):
     external_id: str
     url: str
     published_at: date | None = None
-    status: str | None = None
+    status: PostStatus | None = None
     updated_at: datetime | None = None
     author_username: str
 
@@ -24,5 +26,5 @@ class PostCreate(BaseModel):
     external_id: str
     url: str
     published_at: date | None = None
-    status: str | None = None
+    status: PostStatus | None = None
     author_username: str
