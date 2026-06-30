@@ -5,3 +5,5 @@ __pycache__/
 .env
 .DS_Store
 .idea/
+n8n-secrets.ps1
+start-n8n.ps1
