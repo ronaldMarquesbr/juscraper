@@ -1,5 +1,6 @@
 from utils.date_utils import parse_iso_timestamp_to_date
 from models.enums.platform import Platform
+from models.enums.post_status import PostStatus
 from models.post import PostCreate
 from repositories.post_repository import PostRepository
 from services.posts.lead_validation import is_potential_lead
@@ -17,6 +18,7 @@ class ReelProcessor:
             "external_id": external_id,
             "url": reel["url"],
             "author_username": reel["ownerUsername"],
+            "status": PostStatus.PENDING,
         }
 
         timestamp = reel.get("timestamp")
